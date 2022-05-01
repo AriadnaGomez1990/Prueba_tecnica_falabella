@@ -2,7 +2,7 @@
 
 [![Dashboard de Rick And Morty](img/preview.png)]()
 
-**[Launch Live Preview]()**
+**[Launch Live Preview](https://pruebaariadnafalabella.netlify.app/)**
 
 
 ## About
