@@ -1,8 +1,8 @@
 ## Preview
 
-[![Dashboard de Rick And Morty](img/preview.png)](https://startbootstrap.github.io/startbootstrap-sb-admin-2/)
+[![Dashboard de Rick And Morty](img/preview.png)]()
 
-**[Launch Live Preview](https://startbootstrap.github.io/startbootstrap-sb-admin-2/)**
+**[Launch Live Preview]()**
 
 
 ## About
