@@ -1,6 +1,6 @@
 ## Preview
 
-[![Dashboard de Rick And Morty](img/preview.png)]()
+[![Dashboard de Rick And Morty](img/preview.png)](https://pruebaariadnafalabella.netlify.app/)
 
 **[Launch Live Preview](https://pruebaariadnafalabella.netlify.app/)**
 
