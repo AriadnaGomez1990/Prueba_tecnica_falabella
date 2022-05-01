@@ -57,7 +57,7 @@ async function getapiEpisode(url) {
     showEpisode(data);
 }
 // Llamando a esa función asíncrona
-getapiEpisode(enponint + apiEpisode);
+getapiEpisode(enponint + apiEpisodeAll);
 
 // Función para ocultar el cargador.
 function hideloaderEpisode() {
@@ -109,7 +109,7 @@ async function getApiCountEpisode(url){
     showCountEpisode(data);
 }
 
-getApiCountEpisode(enponint+apiEpisode);
+getApiCountEpisode(enponint + apiEpisodeAll);
 
 function hideloaderCountEpisode(){
 document.getElementById('loadingCountEpisode').style.display = 'none';
@@ -129,7 +129,7 @@ async function getApiCountCharacter(url){
     showCountCharacter(data);
 }
 
-getApiCountCharacter(enponint+apiCharacterAll);
+getApiCountCharacter(enponint + apiCharacterAll);
 
 function hideloaderCountCharacter(){
 document.getElementById('loadingCountCharacter').style.display = 'none';
@@ -149,7 +149,7 @@ async function getApiCountLocation(url){
     showCountLocation(data);
 }
 
-getApiCountLocation(enponint+apiLocationAll);
+getApiCountLocation(enponint + apiLocationAll);
 
 function hideloaderCountLocation(){
 document.getElementById('loadingCountLocation').style.display = 'none';

@@ -27,7 +27,40 @@ function number_format(number, decimals, dec_point, thousands_sep) {
   return s.join(dec);
 }
 
-// Ejemplo de gráfico de barras
+let alive = 0;
+let dead = 0;
+let unknown = 0;
+async function getApiCountCharacterStatus(url){
+  const response = await fetch (url);
+  var data = await response.json();
+  if(response){
+      hideloaderCountCharacterStatus();
+      
+  }
+  showCountCharacterStatus(data);
+}
+
+getApiCountCharacterStatus(enponint + apiCharacterAll);
+
+function hideloaderCountCharacterStatus(){
+  console.log('Error');
+}
+
+function showCountCharacterStatus(data){
+  
+  if(data.results.length > 0 ){
+    for(let r of data.results){
+      if(r.status == 'Alive'){
+        alive++;
+      }else if(r.status == 'Dead'){
+        dead++;
+      }else if(r.status == 'unknown'){
+        unknown++;
+      }
+    }    
+  }
+
+  // Ejemplo de gráfico de barras
 var ctx = document.getElementById("myBarChart");
 var myBarChart = new Chart(ctx, {
   type: 'bar',
@@ -35,10 +68,10 @@ var myBarChart = new Chart(ctx, {
     labels: ["Personajes Vivos", "Personajes Muertos", "Personajes Perdidos",],
     datasets: [{
       label: "Revenue",
-      backgroundColor: " #581845",
+      backgroundColor: " #4e73df",
       hoverBackgroundColor: " #FFC300 ",
-      borderColor: "#FF5733 ",
-      data: [4215, 5312, 6251, 7841, 9821, 14984],
+      borderColor: "#FFC300 ",
+      data: [alive, dead, 15],
     }],
   },
   options: {
@@ -52,10 +85,7 @@ var myBarChart = new Chart(ctx, {
       }
     },
     scales: {
-      xAxes: [{
-        time: {
-          unit: 'month'
-        },
+      xAxes: [{        
         gridLines: {
           display: false,
           drawBorder: false
@@ -68,12 +98,12 @@ var myBarChart = new Chart(ctx, {
       yAxes: [{
         ticks: {
           min: 0,
-          max: 15000,
+          max: 20,
           maxTicksLimit: 5,
           padding: 10,
           // Incluir un signo de dólar en las garrapatas
           callback: function(value, index, values) {
-            return '$' + number_format(value);
+            return '' + number_format(value);
           }
         },
         gridLines: {
@@ -103,9 +133,11 @@ var myBarChart = new Chart(ctx, {
       callbacks: {
         label: function(tooltipItem, chart) {
           var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-          return datasetLabel + ': $' + number_format(tooltipItem.yLabel);
+          return datasetLabel + ':' + number_format(tooltipItem.yLabel);
         }
       }
     },
   }
 });
+}
+

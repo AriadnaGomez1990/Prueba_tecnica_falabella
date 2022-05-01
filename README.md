@@ -1,8 +1,8 @@
 ## Preview
 
-[![Dashboard de Rick And Morty](img/preview.png)](https://pruebaariadnafalabella.netlify.app/)
+[![Dashboard de Rick And Morty](img/preview.png)](https://startbootstrap.github.io/startbootstrap-sb-admin-2/)
 
-**[Launch Live Preview](https://pruebaariadnafalabella.netlify.app/)**
+**[Launch Live Preview](https://startbootstrap.github.io/startbootstrap-sb-admin-2/)**
 
 
 ## About
