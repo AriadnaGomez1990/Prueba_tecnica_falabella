@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Responsive Resume Template">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Prueba Tecnica Ariadna</title>
+
+    <!-- Fuentes personalizadas para esta plantilla-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Estilos personalizados para esta plantilla-->
+    <link href="css/sb-admin-2.css" rel="stylesheet">
+    <!-- Estilos personalizados para esta página -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.1/xlsx.full.min.js"></script>
+
+    <script src="js/Services/enpoint.js"></script>
+    <script src="js/Services/api.js"></script>
+    <script src="js/Services/GenerateReport.js"></script>
+
+</head>
+
+<body id="page-top">
+
+    <!-- Envoltorio de página -->
+    <div id="wrapper">
+
+        <!-- barra lateral -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Barra lateral - Marca -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-10">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Ariadna Gomez Dashboard</div>
+            </a>
+
+            <!-- Divisor -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Elemento de navegación - Tablero -->
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divisor -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Alternador de barra lateral (barra lateral) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- Fin de la barra lateral -->
+
+        <!-- Envoltorio de contenido -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Contenido principal  -->
+            <div id="content">
+
+                <!-- Barra superior -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Alternar barra lateral (barra superior) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Búsqueda en la barra superior -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Barra superior Barra de navegación -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Elemento de navegación: menú desplegable de búsqueda (Solo visible XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Desplegable - Mensajes -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        <!-- Elemento de navegación - Alertas -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell"></i>
+                                <!--Contador - Alertas -->
+                                <span class="badge badge-danger badge-counter">3+</span>
+                            </a>
+                            <!-- Desplegable - Alertas -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">
+                                    Centro de alertas
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">Abril 30, 2022</div>
+                                        <span class="font-weight-bold">¡Un nuevo informe mensual está listo para
+                                            descargar!</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-success">
+                                            <i class="fas fa-video text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">Abril 28, 2022</div>
+                                        se ha publicado un nuevo episodio de Rick and Morty!
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-warning">
+                                            <i class="fas fa-exclamation-triangle text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">Abril 25, 2022</div>
+                                        Alerta de episodios: se han agregado tres episodios nuevos.
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Mostrar todas las
+                                    alertas</a>
+                            </div>
+                        </li>
+
+                        <!-- Elemento de navegación - Mensajes -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-envelope fa-fw"></i>
+                                <!--Contador - Mensajes -->
+                                <span class="badge badge-danger badge-counter">7</span>
+                            </a>
+                            <!-- Desplegable - Mensajes -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="messagesDropdown">
+                                <h6 class="dropdown-header">
+                                    Centro de mensajes
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div class="font-weight-bold">
+                                        <div class="text-truncate">¡Hola! Me pregunto si me puedes ayudar, subiendo los
+                                            ultimos episodios de la temporada 4.</div>
+                                        <div class="small text-gray-500">Emily Fowler · 58m</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">Tengo las fotos que pediste el mes pasado, como
+                                            ¿quieres que te los envíen?</div>
+                                        <div class="small text-gray-500">Kevin Alvares. 1d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="img/undraw_profile_3.svg" alt="...">
+                                        <div class="status-indicator bg-warning"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">El informe del mes pasado se ve muy bien, estoy muy
+                                            contento con
+                                            el progreso hasta ahora, ¡sigan con el buen trabajo!</div>
+                                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
+                                            alt="...">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">¿Soy un buen chico? La razón por la que pregunto es
+                                            porque alguien
+                                            me dijo que la gente le dice esto a todos los perros, aunque no sean
+                                            buenos...</div>
+                                        <div class="small text-gray-500">Morgan· 4d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">
+                                    Leer más mensajes</a>
+                            </div>
+                        </li>
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Elemento de navegación - Información del usuario -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Administrador</span>
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                            </a>
+                            <!-- Desplegable - Información del usuario -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Perfil
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Ajustes
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Registro de Cambios
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Cerrar Sesion
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- Fin de la barra superior -->
+
+                <!-- Contenido de la página de inicio -->
+                <div class="container-fluid">
+
+                    <!--Encabezado de página -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Dashboard de Rick And Morty</h1>
+                    </div>
+
+                    <!--Fila de contenido-->
+                    <div class="row">
+
+                        <!-- Ejemplo de episodios mensuales (mensuales) -->
+                        <div class="col-xl-4 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Cantidad de Episodios</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                <div class="d-flex justify-content-center">
+                                                    <div class="spinner-border" role="status" id="loadingCountEpisode">
+                                                        <span class="sr-only">Loading...</span>
+                                                    </div>
+                                                </div>
+                                                <label for="" id="lblCountEpisode"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-video fa-2x text-Black-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Ejemplo total de personajes (mensuales) -->
+                        <div class="col-xl-4 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Total de personajes</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                <div class="d-flex justify-content-center">
+                                                    <div class="spinner-border" role="status"
+                                                        id="loadingCountCharacter">
+                                                        <span class="sr-only">Loading...</span>
+                                                    </div>
+                                                </div>
+                                                <label for="" id="lblCountcharacter"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="far fa-smile fa-2x text-Black-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ejemplo de cantidad de personajes pendientes pendientes -->
+                        <div class="col-xl-4 col-md-6 mb-4">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                Total de ubicaciones</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                <div class="d-flex justify-content-center">
+                                                    <div class="spinner-border" role="status" id="loadingCountLocation">
+                                                        <span class="sr-only">Loading...</span>
+                                                    </div>
+                                                </div>
+                                                <label for="" id="lblCountLocation"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class=" fas fa-globe fa-2x text-Black-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fila de contenido -->
+
+                    <div class="row">
+
+                        <!-- Gráfico de área -->
+                        <div class="col-xl-8 col-lg-7">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <h6 class="m-0 font-weight-bold text-primary">Episodios Rick And Morty</h6>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <a class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+                                                onclick="getapiEpisodeAll()"><i
+                                                    class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+
+                                    <div class="d-flex justify-content-center">
+                                        <div class="spinner-border" role="status" id="loadingEpisode">
+                                            <span class="sr-only">Cargando...</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="table-responsive">
+                                        <table id="episode" class="table table-bordered" width="100%" cellspacing="0">
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Gráfico circular -->
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <!--Encabezado de tarjeta - Desplegable -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Estadisticas de Personajes
+                                    </h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Encabezado desplegable:</div>
+                                            <a class="dropdown-item" href="#">Acción</a>
+                                            <a class="dropdown-item" href="#"> Otra acción</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">algo mas aqui</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Cuerpo de la tarjeta -->
+                                <div class="card-body">
+                                    <div class="chart-pie pt-4 pb-2">
+                                        <canvas id="myBarChart"></canvas>
+                                    </div>
+                                    <div class="mt-4 text-center wider ">
+                                        <span class="mr-2">
+                                            <i class="fas fa-check-circle text-primary"></i> Vivos
+                                        </span>
+                                        <span class="mr-2">
+                                            <i class="fas fa-skull-crossbones text-success"></i> Muertos
+                                        </span>
+                                        <span class="mr-2">
+                                            <i class="fas fa-question-circle text-info"></i> Perdidos
+
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="mt-3 text-center">
+                        <h2>Personajes Principales de Rick and Morty</h2>
+                    </div>
+
+                    <div class="d-flex justify-content-center">
+                        <div class="spinner-border" role="status" id="loadingCharacter">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+
+                    <div class="row" id="character">
+                    </div>
+                </div>
+                <!-- /.contenedor-líquido -->
+
+            </div>
+            <!-- Fin del contenido principal -->
+
+            <!-- Pie de página -->
+            <footer class="mt-5 sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Prueba Tecnica Falabella - Ariadna Gomez</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- Fin del pie de página -->
+
+        </div>
+        <!-- Envoltorio de fin de contenido -->
+
+    </div>
+    <!-- Envoltorio de fin de página -->
+
+    <!-- Desplácese al botón superior-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Cierre de sesión modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">¿Listo para salir?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Seleccione "Cerrar sesión" a continuación si está listo para finalizar su sesión
+                    actual.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                    <a class="btn btn-primary" href="login.html">Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript básico de Bootstrap-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Complemento básico JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Scripts personalizados para todas las páginas-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Complementos de nivel de página -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- personalizados a nivel de página -->
+    <script src="js/Data/episode-datatable.js"></script>
+
+    <!-- Scripts personalizados a nivel de página -->
+    <script src="js/Data/chart-area-demo.js"></script>
+    <script src="js/Data/chart-pie-data.js"></script>
+    <script src="js/Data/chart-bar-demo.js"></script>
+
+
+
+</body>
+
+</html>

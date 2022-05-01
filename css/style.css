@@ -1,0 +1,11 @@
+.mod-chart-area {
+    position: relative;
+    height: 10rem;
+    width: 100%;
+  }
+  
+  @media (min-width: 768px) {
+    .mod-chart-area {
+      height: 50rem;
+    }
+  }
