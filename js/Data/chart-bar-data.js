@@ -71,7 +71,7 @@ var myBarChart = new Chart(ctx, {
       backgroundColor: " #4e73df",
       hoverBackgroundColor: " #FFC300 ",
       borderColor: "#FFC300 ",
-      data: [alive, dead, 15],
+      data: [alive, dead, unknown],
     }],
   },
   options: {
