@@ -316,7 +316,7 @@
                             </div>
                         </div>
 
-                        <!--Ejemplo total de personajes (mensuales) -->
+                        <!--Ejemplo total de personajes -->
                         <div class="col-xl-4 col-md-6 mb-4">
                             <div class="card border-left-success shadow h-100 py-2">
                                 <div class="card-body">
@@ -342,7 +342,7 @@
                             </div>
                         </div>
 
-                        <!-- Ejemplo de cantidad de personajes pendientes pendientes -->
+                        <!-- Ejemplo de cantidad de personajes pendientes -->
                         <div class="col-xl-4 col-md-6 mb-4">
                             <div class="card border-left-warning shadow h-100 py-2">
                                 <div class="card-body">
@@ -382,7 +382,8 @@
                                         </div>
                                         <div class="col-md-2 text-right">
                                             <a class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-                                                onclick="getapiEpisodeAll()"><i class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
+                                                onclick="getapiEpisodeAll()"><i
+                                                    class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
                                         </div>
                                     </div>
                                 </div>
@@ -402,14 +403,14 @@
                             </div>
                         </div>
 
-                        <!--Gráfico circular -->
+                        <!--Gráfico de barras  -->
                         <div class="col-xl-4 col-lg-5">
                             <div class="card shadow mb-4">
                                 <!--Encabezado de tarjeta - Desplegable -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Estadisticas de Personajes
-                                    </h6>                                  
+                                    </h6>
                                 </div>
                                 <!-- Cuerpo de la tarjeta -->
                                 <div class="card-body">
@@ -424,17 +425,74 @@
                                             <i class="fas fa-skull-crossbones text-success"></i> Muertos
                                         </span>
                                         <span class="mr-2">
-                                            <i class="fas fa-question-circle text-info"></i> Perdidos
+                                            <i class="fas fa-question-circle text-info"></i> Desconocidido
 
                                         </span>
                                     </div>
+
+                                    <!-- Cuerpo del accordion -->
+                                    <div class="accordion" id="accordionExample">
+                                        <div class="card">
+                                            <div class="card-header" id="headingOne">
+                                                <h2 class="mb-0">
+                                                    <button class="btn btn-link btn-block text-left" type="button"
+                                                        data-toggle="collapse" data-target="#collapseOne"
+                                                        aria-expanded="true" aria-controls="collapseOne">
+                                                        Estadisticas personajes vivos
+                                                    </button>
+                                                </h2>
+                                            </div>
+
+                                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                                data-parent="#accordionExample">
+                                                <div class="card-body">
+                                                    Some placeholder content for the first accordion panel. This panel
+                                                    is shown by default, thanks to the <code>.show</code> class.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header" id="headingTwo">
+                                                <h2 class="mb-0">
+                                                    <button class="btn btn-link btn-block text-left collapsed"
+                                                        type="button" data-toggle="collapse" data-target="#collapseTwo"
+                                                        aria-expanded="false" aria-controls="collapseTwo">
+                                                        Estadisticas personajes muertos
+                                                    </button>
+                                                </h2>
+                                            </div>
+                                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                                data-parent="#accordionExample">
+                                                <div class="card-body">
+                                                    Some placeholder content for the second accordion panel. This panel
+                                                    is hidden by default.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header" id="headingThree">
+                                                <h2 class="mb-0">
+                                                    <button class="btn btn-link btn-block text-left collapsed"
+                                                        type="button" data-toggle="collapse"
+                                                        data-target="#collapseThree" aria-expanded="false"
+                                                        aria-controls="collapseThree">
+                                                        Estadisticas personajes desconocido
+                                                    </button>
+                                                </h2>
+                                            </div>
+                                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                                data-parent="#accordionExample">
+                                                <div class="card-body">
+                                                    And lastly, the placeholder content for the third and final
+                                                    accordion panel. This panel is hidden by default.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
-
                     <div class="mt-3 text-center">
                         <h2>Personajes Principales de Rick and Morty</h2>
                     </div>
@@ -513,7 +571,7 @@
     <!-- personalizados a nivel de página -->
     <script src="js/Data/episode-datatable.js"></script>
 
-    <!-- Scripts personalizados a nivel de página -->    
+    <!-- Scripts personalizados a nivel de página -->
     <script src="js/Data/chart-bar-data.js"></script>
 
 

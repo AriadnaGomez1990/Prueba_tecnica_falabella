@@ -65,7 +65,7 @@ var ctx = document.getElementById("myBarChart");
 var myBarChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["Personajes Vivos", "Personajes Muertos", "Personajes Perdidos",],
+    labels: ["Vivos", " Muertos", " Desconocidos",],
     datasets: [{
       label: "Revenue",
       backgroundColor: " #4e73df",
@@ -140,4 +140,3 @@ var myBarChart = new Chart(ctx, {
   }
 });
 }
-
